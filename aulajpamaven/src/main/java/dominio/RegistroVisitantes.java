@@ -1,0 +1,73 @@
+package dominio;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class RegistroVisitantes implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	
+	private String nome;
+	private String documento;
+	private String email; 
+	
+	public RegistroVisitantes() {
+	}
+
+	public RegistroVisitantes(Integer id, String nome, String documento, String email) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.documento = documento;
+		this.email = email;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDocumento() {
+		return documento;
+	}
+
+	public void setDocumento(String documento) {
+		this.documento = documento;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "RegistroVisitantes [id=" + id + ", nome=" + nome + ", documento=" + documento + ", email=" + email
+				+ "]";
+	}
+	
+	
+
+}
